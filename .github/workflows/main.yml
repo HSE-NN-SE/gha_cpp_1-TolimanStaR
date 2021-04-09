@@ -89,8 +89,8 @@ jobs:
       - name: Runs a binary
         run: |
           pwd
-          ls -lFsa
-          ./main;
+          ls -lFsa Algorithms_TSP_ILS/
+          ./Algorithms_TSP_ILS/main;
 #   archive:
 #   send_to_telegram:
   
