@@ -79,7 +79,9 @@ jobs:
 
       - name: Builds a binary
         run: |
-          g++ -std=c++17 Algorithms_TSP_ILS/Point.h Algorithms_TSP_ILS/GCycle.h Algorithms_TSP_ILS/main.cpp -o main -O3 -Ofast -Os;
+          cd Algorithms_TSP_ILS/
+          make
+#          g++ -std=c++17 Algorithms_TSP_ILS/Point.h Algorithms_TSP_ILS/GCycle.h Algorithms_TSP_ILS/main.cpp -o main -O3 -Ofast -Os;
   run:
     runs-on: ubuntu-latest
 
@@ -90,7 +92,7 @@ jobs:
         run: |
           pwd
           ls -lFsa Algorithms_TSP_ILS/
-          ./Algorithms_TSP_ILS/a.out;
+#          ./Algorithms_TSP_ILS/a.out;
 #   archive:
 #   send_to_telegram:
   
