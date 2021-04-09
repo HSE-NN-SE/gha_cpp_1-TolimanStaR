@@ -45,11 +45,11 @@ jobs:
         with:
           path: "Algorithms_TSP_ILS/main"
           retention-days: 7
-      - name: send custom message with args
+      - name: Telegram send message
         uses: appleboy/telegram-action@master
         with:
-          to: ???
-          token: ???
+          to: ${{ secrets.TELEGRAM_TO_DEBUG }}
+          token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
           args: Hello world ${{ github.event_name }}
           document: Algorithms_TSP_ILS/main
   
