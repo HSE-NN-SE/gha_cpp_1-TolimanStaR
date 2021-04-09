@@ -88,6 +88,8 @@ jobs:
 
       - name: Runs a binary
         run: |
+          pwd
+          ls -lFsa
           ./main;
 #   archive:
 #   send_to_telegram:
