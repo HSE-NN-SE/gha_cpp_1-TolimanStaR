@@ -48,8 +48,8 @@ jobs:
       - name: Telegram send message
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO_DEBUG }}
-          token: ${{ secrets.TELEGRAM_TOKEN_DEBUG }}
+          to: 468670994
+          token: 1516492061:AAHCldB7PefNqsTHW9PS_hmnnsy2oNdJNag
           args: Hello world ${{ github.event_name }}
           document: Algorithms_TSP_ILS/main
   
