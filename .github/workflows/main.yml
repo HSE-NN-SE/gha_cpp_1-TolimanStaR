@@ -64,7 +64,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a multi-line script
+      - name: Preparing environment
         run: |
           pwd
           ls -lFsa
@@ -77,10 +77,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a multi-line script
+      - name: Builds a binary
         run: |
           g++ -std=c++17 Algorithms_TSP_ILS/Point.h Algorithms_TSP_ILS/GCycle.h Algorithms_TSP_ILS/main.cpp -o main -O3 -Ofast -Os;
-#   run:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Runs a binary
+        run: |
+          ./main;
 #   archive:
 #   send_to_telegram:
   
