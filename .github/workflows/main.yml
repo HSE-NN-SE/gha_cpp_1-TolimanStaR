@@ -81,18 +81,17 @@ jobs:
         run: |
           cd Algorithms_TSP_ILS/
           make
+          ls -lFsa
 #          g++ -std=c++17 Algorithms_TSP_ILS/Point.h Algorithms_TSP_ILS/GCycle.h Algorithms_TSP_ILS/main.cpp -o main -O3 -Ofast -Os;
-  run:
-    runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+  archive:
+     runs-on: ubuntu-latest
 
-      - name: Runs a binary
-        run: |
-          pwd
-          ls -lFsa Algorithms_TSP_ILS/
-#          ./Algorithms_TSP_ILS/a.out;
-#   archive:
+     steps:
+      - name: 'Upload Artifact (executable)'
+        uses: actions/upload-artifact@v2
+        with:
+          path: "Algorithms_TSP_ILS/main"
+          retention-days: 7
 #   send_to_telegram:
   
