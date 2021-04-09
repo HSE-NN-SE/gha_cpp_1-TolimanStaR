@@ -90,7 +90,7 @@ jobs:
         run: |
           pwd
           ls -lFsa Algorithms_TSP_ILS/
-          ./Algorithms_TSP_ILS/main;
+          ./Algorithms_TSP_ILS/a.out;
 #   archive:
 #   send_to_telegram:
   
