@@ -16,46 +16,46 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build1  :
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+#   build1  :
+#     # The type of runner that the job will run on
+#     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+#     # Steps represent a sequence of tasks that will be executed as part of the job
+#     steps:
+#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+#       - uses: actions/checkout@v2
       
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: Run test
-        run: |
-          pwd
-          ls
-          cd Algorithms_TSP_ILS
-          ls
-          echo "ulululul" >> Answers_GHA/lol.txt
-      - name: Run TSP_ILS
-        run: |
-          cd Algorithms_TSP_ILS
-          make
-          ls
-          ls Answers_GHA
-          ls Answers
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v2
-        with:
-          path: "Algorithms_TSP_ILS/main"
-          retention-days: 3
-      - uses: actions/checkout@master
-      - name: send custom message with args
-        uses: appleboy/telegram-action@master
-        with:
-          to: 522544308
-          token: 1783089630:AAEwIPhd20ozFThi6WY0OhCtx0IUKCYyy1M
-          args: massage massage massage ${{ github.event_name }}
-          document: Algorithms_TSP_ILS/main
+#       - name: Run a multi-line script
+#         run: |
+#           echo Add other actions to build,
+#           echo test, and deploy your project.
+#       - name: Run test
+#         run: |
+#           pwd
+#           ls
+#           cd Algorithms_TSP_ILS
+#           ls
+#           echo "ulululul" >> Answers_GHA/lol.txt
+#       - name: Run TSP_ILS
+#         run: |
+#           cd Algorithms_TSP_ILS
+#           make
+#           ls
+#           ls Answers_GHA
+#           ls Answers
+#       - name: 'Upload Artifact'
+#         uses: actions/upload-artifact@v2
+#         with:
+#           path: "Algorithms_TSP_ILS/main"
+#           retention-days: 3
+#       - uses: actions/checkout@master
+#       - name: send custom message with args
+#         uses: appleboy/telegram-action@master
+#         with:
+#           to: 522544308
+#           token: 1783089630:AAEwIPhd20ozFThi6WY0OhCtx0IUKCYyy1M
+#           args: massage massage massage ${{ github.event_name }}
+#           document: Algorithms_TSP_ILS/main
           
 #######################
   prepare-env:
@@ -69,7 +69,7 @@ jobs:
           pwd
           ls -lFsa
           sudo apt install gcc
-          sudo apt install build-essentials
+          sudo apt install build-essential
           
   build:
     runs-on: ubuntu-latest
